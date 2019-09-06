@@ -110,7 +110,7 @@ export class SimpleWebUI extends Construct {
         viewerCertificate: {
           acmCertificateArn: props.acmCertificateArn,
           cloudFrontDefaultCertificate: props.acmCertificateArn ? undefined : true,
-          sslSupportMethod: 'sni-only'
+          sslSupportMethod: props.acmCertificateArn ? 'sni-only' : undefined
         }
       }
     });
